@@ -12,34 +12,41 @@ import React,{useState,useEffect} from 'react'
 
 function MyComponent() {
 
-  const [count,setCount] =useState(0);
-  const [color,setColor] =useState("green",);
+
+  const[width,setWidth] = useState(window.innerWidth);
+  const[height,setHeight] = useState(window.innerHeight);
+
+
 
   useEffect(() => {
-    document.title = `Count :${count} ${color}`;
+        window.addEventListener("resize",handleResize);
+        console.log("Event listerner addded");
 
-    return () => {
-      //SOME CLEANUP CODE
-    }
-  },[count,color]);
+        return () =>{
+          window.removeEventListener("resize",handleResize);
+          console.log("Event listerner removeded");
+        }
+  },[]);
 
-  function addCount(){
-    setCount(c => c+1);
+  useEffect(() => {
+    document.title = `Size : ${width} x ${height}`; 
+  },[{width,height}]);
+
+
+
+
+  function handleResize(){
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   }
-  function subtractCount(){
-    setCount(c => c-1);
-  }
-  function changeColor(){
-    setColor(c => c === "green" ? "red"  : "green");
-  }
+
   return (
     <>
-    <p style={{color: color}}>Count: {count}</p>
-    <button onClick={addCount}>Add</button>
-    <button onClick={subtractCount}>SUbtract</button> <br />
-    <button onClick={changeColor}>Change Color</button>
+    <p>Window Width : {width}px</p>
+    <p>Window Height : {height}px</p>
     </>
   )
 }
+  
 
-export default MyComponent
+export default MyComponent;
