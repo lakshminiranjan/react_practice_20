@@ -1,4 +1,4 @@
-import ToDoList from "./components/ToDoList"
+import MyComponent from "./components/MyComponent"
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <ToDoList/>
+    <MyComponent/>
     </>
 
   )
