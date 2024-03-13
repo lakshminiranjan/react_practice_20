@@ -1,4 +1,4 @@
-import MyComponent from "./components/MyComponent"
+import DigitalClock from "./components/DigitalClock"
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <MyComponent/>
+    <DigitalClock/>
     </>
 
   )
