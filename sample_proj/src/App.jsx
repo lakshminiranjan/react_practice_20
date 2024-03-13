@@ -1,4 +1,4 @@
-import MyComponent from "./components/MyComponent"
+import StopWatch from "./components/StopWatch"
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <MyComponent/>
+    <StopWatch/>
     </>
 
   )
